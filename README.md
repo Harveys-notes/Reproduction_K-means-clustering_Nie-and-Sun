@@ -345,7 +345,6 @@ plt.show()
 
 <br/>
 
-# P.S.   
-Please don't reproduce this work or parts thereof without permission.   
+# P.S. 
 Author: Huayu Chen   
 E-mail: harvey_chen@163.com

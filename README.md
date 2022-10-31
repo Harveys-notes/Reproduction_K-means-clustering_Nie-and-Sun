@@ -3,7 +3,7 @@
 
 According to the spatial distribution of two extreme precipitation indices, i.e., R95p and R50, Nie and Sun (2021) regionalize the southwest China (SWC) into two subregions. This division of SWC is based on both the terrain in the southwest China and the k-means clustering analysis.
     
-> <b>Reference:</b> Nie, Y., & Sun, J. (2021). Synoptic-scale circulation precursors of extreme precipitation events over southwest China during the rainy season. Journal of Geophysical Research: Atmospheres, 126, e2021JD035134. https://doi. org/10.1029/2021JD035134
+> <b>Reference:</b> Nie, Y., & Sun, J. (2021). Synoptic-scale circulation precursors of extreme precipitation events over southwest China during the rainy season. Journal of Geophysical Research: Atmospheres, 126, e2021JD035134. https://doi.org/10.1029/2021JD035134
     
 In this post, we try to reproduce the clustering of R95p in  Nie and Sun (2021) (**Figure 1**).
 

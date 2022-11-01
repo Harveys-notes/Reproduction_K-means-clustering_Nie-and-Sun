@@ -91,7 +91,7 @@ f_w.variables['R95p'][:,:] = sum_grid
 f_w.close()
 ```
 
-# 3. Classify precipitation in SWC via K-means clustering depending on R95p
+# 4. Classify precipitation in SWC via K-means clustering depending on R95p
 
 
 ```python
@@ -190,7 +190,7 @@ print(R95p_mask[-1][-1])
 print(R95p_mask.mask)
 ```
 
-    Warning 1: Failed to fetch spatial reference on layer 地理信息图层_省界 to build transformer, assuming matching coordinate systems.
+    Warning 1: Failed to fetch spatial reference on layer China_province_boundary to build transformer, assuming matching coordinate systems.
 
 
 

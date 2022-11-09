@@ -347,4 +347,4 @@ plt.show()
 
 # P.S. 
 Author: Huayu Chen   
-E-mail: harvey_mrchen@163.com
+E-mail: harvey.mrchen@foxmail.com

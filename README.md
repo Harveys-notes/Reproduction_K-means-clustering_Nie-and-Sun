@@ -297,35 +297,34 @@ plt.show()
 ```python
 fig = plt.figure(figsize=(6,4), dpi=100)
 ax = fig.add_subplot(111, projection=ccrs.PlateCarree())
-'''底图绘制'''
+'''import .shp file'''
 shp_province = shpreader.Reader(shapefile)
 ax.add_geometries(shp_province.geometries(), crs=ccrs.PlateCarree(), facecolor='none',edgecolor='k',linewidth=1.5)
-'''经纬度虚线设置'''
+'''Setting the dashlines of lat/lon'''
 gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=False, linewidth=1,
-                  linestyle=':', color='k', alpha=0.8)  #设置经纬度虚线
+                  linestyle=':', color='k', alpha=0.8) 
 dlon, dlat = 4, 4
 xticks = np.arange(2, 162, dlon)
-yticks = np.arange(2, 42, dlat)     #如此设置才可有0度线
+yticks = np.arange(2, 42, dlat)    
 gl.xlocator = mticker.FixedLocator(xticks) 
 gl.ylocator = mticker.FixedLocator(yticks)
-'''坐标轴设置成经纬度格式'''
-#####这里不需要设置major_locator，因为上部分gridlines已经完成这部分工作#####
-##x轴##
+'''setting the axis as format of lat/lon'''
+##x-axis##
 ax.set_xticks(xticks, crs=ccrs.PlateCarree()) 
-ax.xaxis.set_major_formatter(LongitudeFormatter(zero_direction_label=True))    #将数字设置为经度格式
-ax.xaxis.set_minor_locator(MultipleLocator(2))     #设置经度次格距为10的倍数
-##y轴##
+ax.xaxis.set_major_formatter(LongitudeFormatter(zero_direction_label=True)) 
+ax.xaxis.set_minor_locator(MultipleLocator(2))    
+##y-axis##
 ax.set_yticks(yticks, crs=ccrs.PlateCarree()) 
-ax.yaxis.set_major_formatter(LatitudeFormatter())   #将数字设置为纬度格式
-ax.yaxis.set_minor_locator(MultipleLocator(2))      #设置纬度次格距为5的倍数
-'''contourf 作图'''
+ax.yaxis.set_major_formatter(LatitudeFormatter())   
+ax.yaxis.set_minor_locator(MultipleLocator(2))  
+'''contourf'''
 ax_c = ax.contourf(longitude, latitude, SWC_labels,levels=[0,0.5,1], colors=['#FFC0CB','#ADD8E6'])
 # This is the fix for the white lines between contour levels
 for c in ax_c.collections:
     c.set_edgecolor("face")
-'''优化图片边框、坐标轴粗细''' 
-ax.spines['geo'].set_linewidth('1.6')    #地图加粗边框与普通的plt不一样
-ax.tick_params(axis='both', which='major', width=1.6, length=6)   #加粗主坐标轴刻度线粗细、长度
+'''Some revision of parameters''' 
+ax.spines['geo'].set_linewidth('1.6')  
+ax.tick_params(axis='both', which='major', width=1.6, length=6)  
 ax.tick_params(axis='both', which='minor', width=0.8, length=3)
 '''name the sequence'''
 ax.set_title('R95p clusters', loc='left')
